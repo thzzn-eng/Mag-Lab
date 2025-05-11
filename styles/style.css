@@ -3,8 +3,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: gray;
+    color: white;
 }
 
 header {
@@ -12,6 +12,9 @@ header {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
@@ -83,13 +86,6 @@ footer p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Add this to your CSS */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
 .download-button {
     display: inline-block;
     padding: 10px 15px;
@@ -103,4 +99,12 @@ header {
 
 .download-button:hover {
     background-color: #0056b3;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: lightgray;
 }
