@@ -1,15 +1,15 @@
-body {
+\body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: gray;
-    color: white;
+    background-color: #000000; /* Pitch black */
+    color: #FFFFFF; /* White */
 }
 
 header {
-    background: #333;
-    color: #fff;
+    background: #000000; /* Pitch black */
+    color: #FFFFFF; /* White */
     padding: 1rem 0;
     text-align: center;
     position: sticky;
@@ -31,7 +31,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #FFFFFF; /* White */
     text-decoration: none;
     font-weight: bold;
 }
@@ -47,13 +47,14 @@ main {
 section {
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: #fff;
+    background: #000000; /* Pitch black */
+    color: #FFFFFF; /* White */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: none; /* Remove shadow for simplicity */
 }
 
 h2 {
-    color: #444;
+    color: #FFFFFF; /* White */
     margin-bottom: 1rem;
 }
 
@@ -65,8 +66,8 @@ ul {
 footer {
     text-align: center;
     padding: 1rem 0;
-    background: #333;
-    color: #fff;
+    background: #000000; /* Pitch black */
+    color: #FFFFFF; /* White */
     margin-top: 2rem;
 }
 
@@ -83,28 +84,29 @@ footer p {
 .gallery img {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: none; /* Remove shadow */
 }
 
 .download-button {
     display: inline-block;
     padding: 10px 15px;
     margin: 10px 0;
-    background-color: #007BFF;
-    color: #fff;
+    background-color: #FFFFFF; /* White */
+    color: #000000; /* Pitch black */
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
 }
 
 .download-button:hover {
-    background-color: #0056b3;
+    background-color: #FFFFFF; /* Keep white */
+    color: #000000; /* Keep pitch black */
 }
 
 a {
-    color: white;
+    color: #FFFFFF; /* White */
 }
 
 a:hover {
-    color: lightgray;
+    color: #FFFFFF; /* Keep white */
 }
