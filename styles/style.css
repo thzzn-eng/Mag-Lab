@@ -1,10 +1,10 @@
-\body {
+body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: #000000; /* Pitch black */
-    color: #FFFFFF; /* White */
+    color: #ffffff; /* White */
 }
 
 header {
@@ -109,4 +109,30 @@ a {
 
 a:hover {
     color: #FFFFFF; /* Keep white */
+}
+
+/* Ensure all elements have a black background and white text */
+body, header, nav, main, section, footer, .gallery, .download-button {
+    background-color: #000000 !important; /* Force black background */
+    color: #FFFFFF !important; /* Force white text */
+}
+
+/* Adjust links to ensure they remain white */
+a {
+    color: #FFFFFF !important;
+}
+
+a:hover {
+    color: #FFFFFF !important;
+}
+
+/* Remove any white background from buttons */
+.download-button {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.download-button:hover {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
 }
