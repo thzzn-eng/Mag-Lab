@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZacLab (Photography)</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Photography</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="photography.html">Photography</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="photography">
+            <h2>My Photography</h2>
+            <p>Check out some of my photography work below:</p>
+            <div class="gallery" id="photoGallery">
+                <!-- Photo entries will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const photoEntries = JSON.parse(localStorage.getItem('photos')) || [];
+            const photoGallery = document.getElementById('photoGallery');
+
+            photoEntries.forEach(photo => {
+                const photoElement = document.createElement('div');
+                photoElement.classList.add('photo-entry');
+                photoElement.innerHTML = `
+                    <h3>${photo.title}</h3>
+                    <img src="${photo.url}" alt="${photo.title}">
+                `;
+                photoGallery.appendChild(photoElement);
+            });
+        });
+    </script>
+    
+    <footer>
+        <p> my head hurts and my email is dinitriodela@gmail.com; my phone number us 350-250-9189.</p>
+    </footer>
+</body>
+</html>
