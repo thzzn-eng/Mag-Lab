@@ -24,26 +24,52 @@
             <h2>My Photography</h2>
             <p>Check out some of my photography work below:</p>
             <div class="gallery" id="photoGallery">
-                <!-- Photo entries will be dynamically loaded here -->
+                <div class="photo-entry">
+                    <img src="20241005_213343.jpg" alt="20241005_213343.jpg">
+                </div>
+                <div class="photo-entry">
+                    <img src="IMG_0652.jpg" alt="IMG_0652.jpg">
+                </div>
+                <div class="photo-entry">
+                    <img src="IMG_3298.jpg" alt="IMG_3298.jpg">
+                </div>
+                <div class="photo-entry">
+                    <img src="IMG_3375.jpg" alt="IMG_3375.jpg">
+                </div>
+                <div class="photo-entry">
+                    <img src="IMG_3507.jpg" alt="IMG_3507.jpg">
+                </div>
+                <div class="photo-entry">
+                    <img src="IMG_3627.jpg" alt="IMG_3627.jpg">
+                </div>
+                <div class="photo-entry">
+                    <img src="IMG_3694.jpg" alt="IMG_3694.jpg">
+                </div>
+                <div class="photo-entry">
+                    <img src="IMG_3712.jpg" alt="IMG_3712.jpg">
+                </div>
+                <div class="photo-entry">
+                    <img src="photo.png" alt="photo.png">
+                </div>
             </div>
         </section>
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const photoEntries = JSON.parse(localStorage.getItem('photos')) || [];
-            const photoGallery = document.getElementById('photoGallery');
-
-            photoEntries.forEach(photo => {
-                const photoElement = document.createElement('div');
-                photoElement.classList.add('photo-entry');
-                photoElement.innerHTML = `
-                    <h3>${photo.title}</h3>
-                    <img src="${photo.url}" alt="${photo.title}">
-                `;
-                photoGallery.appendChild(photoElement);
-            });
-        });
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     const photoEntries = JSON.parse(localStorage.getItem('photos')) || [];
+        //     const photoGallery = document.getElementById('photoGallery');
+        //
+        //     photoEntries.forEach(photo => {
+        //         const photoElement = document.createElement('div');
+        //         photoElement.classList.add('photo-entry');
+        //         photoElement.innerHTML = `
+        //             <h3>${photo.title}</h3>
+        //             <img src="${photo.url}" alt="${photo.title}">
+        //         `;
+        //         photoGallery.appendChild(photoElement);
+        //     });
+        // });
     </script>
     
     <footer>
