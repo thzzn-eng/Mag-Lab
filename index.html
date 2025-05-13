@@ -15,6 +15,9 @@
         }
         .hero {
             padding: 10vh 10vw; /* Adjusted padding to move the hero title further in */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         .hero h1 {
             font-size: 4rem;
@@ -105,19 +108,26 @@
             color: #000 !important; /* Ensure black text */
             transform: scale(1.1); /* Slightly larger */
         }
+
+        .hero.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
     <section class="hero">
-        <h1>Hello,</h1>
-        <h1>My name is Isaac.</h1>
+        <h1>Hello, <br> My name is Isaac.</h1>
+        <br>
+        <br>
         <p>11th grade student athlete at Middle College High School.</p>
+        <br>
         <p>I am an aspiring astrophysicist and engineer with a passion for learning and research.</p>
+        <br>
         <p>I hope to bring the love of science and creativity to other's and my life through collaboration, commitment, cunning.</p>
     </section>
 
-
-        <section class="section" id="project2">
+    <section class="section" id="project2">
             <img src="Screen recording 2025-05-12 8.51.26 PM.gif" alt="Accretion Disk Simulation"/>
             <div class="section-content">
                 <h2>1.1 Accretion Disk Simulation</h2>
@@ -179,7 +189,22 @@
         sections.forEach(section => {
             section.style.transition = 'opacity 2s ease, transform 2s ease'; // Slower and smoother transition
         });
-    </script>
+
+        const heroSection = document.querySelector('.hero');
+
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        heroObserver.observe(heroSection);
     </script>
 </body>
 </html>
