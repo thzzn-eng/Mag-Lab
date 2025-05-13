@@ -38,7 +38,7 @@
         }
         a {
             color: inherit;
-            text-decoration: underline;
+            text-decoration: none; /* Removed underline */
         }
         nav ul {
             list-style: none;
@@ -57,7 +57,7 @@
         /* Fade-in effect and section styles */
         .section {
             display: flex;
-            flex-direction: row;
+            flex-direction: row; /* Default direction */
             align-items: center;
             justify-content: center;
             padding: 5vh 5vw; /* Reduced padding to decrease distance between sections */
@@ -65,6 +65,10 @@
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .section-reversed { /* New class to reverse flex items */
+            flex-direction: row-reverse;
         }
 
         .section.visible {
@@ -75,8 +79,14 @@
         .section img,
         .section canvas {
             max-width: 400px;
-            margin-right: 3rem;
+            margin-right: 3rem; /* Default margin for image on the left */
             border-radius: 15px; /* Added rounded corners */
+        }
+
+        .section-reversed img, /* Styles for image in a reversed section */
+        .section-reversed canvas {
+            margin-right: 0; /* Remove original right margin */
+            margin-left: 3rem; /* Add left margin for image on the right */
         }
 
         .section-content {
@@ -96,8 +106,8 @@
 
         .btn {
             background: #fff; /* White background */
-            color: #000; /* Black text */
-            border: 2px solid #a81818;
+            color: #000000 !important; /* Ensure black text */
+            border: 2px solid #000000; /* Black border */
             border-radius: 999px;
             text-transform: uppercase;
             font-weight: bold;
@@ -141,7 +151,7 @@
             </div>
         </section>
        
-        <section class="section" id="project2">
+        <section class="section section-reversed" id="project2">
             <img src="Capture d’écran_12-5-2025_2033_127.0.0.1.jpeg" alt="Accretion Disk Simulation Screenshot"/>
             <div class="section-content">
                 <h2>1.2 Accretion Disk Program Paper</h2>
