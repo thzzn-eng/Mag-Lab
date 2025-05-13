@@ -91,18 +91,22 @@ footer p {
 
 .download-button {
     display: inline-block;
-    padding: 10px 15px;
+    padding: 0.6em 1.2em; /* Standardized padding */
     margin: 10px 0;
-    background-color: #FFFFFF; /* White */
-    color: #000000; /* Pitch black */
+    background-color: #007bff; /* Common blue */
+    color: #FFFFFF; /* White text */
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
+    border: none; /* Remove default border */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
 .download-button:hover {
-    background-color: #FFFFFF; /* Keep white */
-    color: #000000; /* Keep pitch black */
+    background-color: #007bff; /* Darker blue on hover */
+    color: #FFFFFF; /* Keep white text */
+    text-decoration: none;
+    transform: scale(1.1);
 }
 
 a {
@@ -114,7 +118,7 @@ a:hover {
 }
 
 /* Ensure all elements have a black background and white text */
-body, header, nav, main, section, footer, .gallery, .download-button {
+body, header, nav, main, section, footer, .gallery { /* MODIFIED: .download-button removed from this global override */
     background-color: #000000 !important; /* Force black background */
     color: #FFFFFF !important; /* Force white text */
 }
@@ -125,17 +129,6 @@ a {
 }
 
 a:hover {
-    color: #FFFFFF !important;
-}
-
-/* Remove any white background from buttons */
-.download-button {
-    background-color: #000000 !important;
-    color: #FFFFFF !important;
-}
-
-.download-button:hover {
-    background-color: #000000 !important;
     color: #FFFFFF !important;
 }
 
