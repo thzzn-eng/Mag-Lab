@@ -89,20 +89,21 @@
         }
 
         .btn {
-            padding: 0.75rem 1.5rem;
-            background: #300101;
-            border: 2px solid #000;
+            background: #fff; /* White background */
+            color: #000; /* Black text */
+            border: 2px solid #a81818;
             border-radius: 999px;
             text-transform: uppercase;
             font-weight: bold;
-            color: #000000; /* Set button text color to black */
             display: inline-block;
+            padding: 0.75rem 1.5rem;
             transition: all 0.3s ease;
         }
 
         .btn:hover {
-            background: #000;
-            color: #fff;
+            background: #fff; /* White background */
+            color: #000 !important; /* Ensure black text */
+            transform: scale(1.1); /* Slightly larger */
         }
     </style>
 </head>
@@ -123,7 +124,7 @@
                 <p>
                     This simulation models the swirling matter spiraling into a black hole. I built this using Python and matplotlib to visualize disk density and relativistic frame dragging effects.
                 </p>
-                <a href="projects/project1.html" class="btn" style="color: #000;">Explore Web Version →</a>
+                <a href="projects/project1.html" class="btn" style="color: #000;">Synopsis →</a>
             </div>
         </section>
        
