@@ -5,10 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZacLab</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* TEMPORARY: Include here or move to your CSS file */
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #f2f2f2;
+            color: #111;
+        }
+        .hero {
+            padding: 10vh 10vw; /* Adjusted padding to move the hero title further in */
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin: 0;
+        }
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0 0 1rem 0;
+        }
+        .hero p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+        nav ul li {
+            display: inline;
+        }
+        footer {
+            padding: 2rem 5vw;
+            font-size: 0.9rem;
+            background: #eaeaea;
+        }
+        /* Fade-in effect and section styles */
+        .section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 10vh 5vw;
+            min-height: 100vh;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section img,
+        .section canvas {
+            max-width: 400px;
+            margin-right: 3rem;
+            border-radius: 15px; /* Added rounded corners */
+        }
+
+        .section-content {
+            max-width: 600px;
+        }
+
+        .section-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-content p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            background: #570606;
+            border: 2px solid #000;
+            border-radius: 999px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #000; /* Set button text color to black */
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
+    <section class="hero">
+        <h1>Hello,</h1>
+        <h1>My name is Isaac.</h1>
+        <p>11th grade student athlete at Middle College High School.</p>
+        <p>I am an aspiring astrophysicist and engineer with a passion for learning and research.</p>
+        <p>I hope to bring the love of science and creativity to other's and my life through collaboration, commitment, cunning.</p>
+    </section>
+
+
+        <section class="section" id="project2">
+            <img src="assets/accretion-disk.gif" alt="Accretion Disk Simulation"/>
+            <div class="section-content">
+                <h2>1.1 Accretion Disk Simulation</h2>
+                <p>
+                    This simulation models the swirling matter spiraling into a black hole. I built this using Python and matplotlib to visualize disk density and relativistic frame dragging effects.
+                </p>
+                <a href="projects/project1.html" class="btn" style="color: #000;">Explore Web Version →</a>
+            </div>
+        </section>
+       
+        <section class="section" id="project2">
+            <img src="Capture d’écran_12-5-2025_2033_127.0.0.1.jpeg" alt="Accretion Disk Simulation Screenshot"/>
+            <div class="section-content">
+                <h2>1.2 Accretion Disk Program Paper</h2>
+                <p>
+                    This paper summarizes the processing and findings of the accretion disk simulation project. It discusses the physical principles behind accretion disks and the computational methods used to model them.   
+                </p>
+                <a href="projects/project1.html" class="btn" style="color: #000;">Explore Web Version →</a>
+            </div>
+        </section>
+
+        <section id="interests">
+            <h2>Interests</h2>
+            <ul>
+                <li>Astrophysics, geophysics, and theoretical physics</li>
+                <li>Software development and engineering</li>
+                <li>Climate politics and international relations</li>
+                <li>Rock climbing</li>
+                <li>Oceanic and arboreal photography</li>
+                <li>Classical and romantic literature</li>
+            </ul>
+        </section>
+        
+        <section id="photography">
+            <h2>Photography</h2>
+            <p>Check out some of my photography work: <a href="photography.html">photography</a></p>
+        </section>
+    </main>
     <header>
-        <h1>Hi! I'm Isaac!</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -18,44 +165,31 @@
             </ul>
         </nav>
     </header>
-    
-    <main>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Here's my most recent project on black hole accretion disks:</p>
-            <ul>
-                <li><a href="projects/project1.html">AccSim</a></li>
-                <!-- Add more projects as needed -->
-            </ul>
-        </section>
-        
-        <section id="interests">
-            <h2>Interests</h2>
-            <p>These are some of my interests:</p>
-            <ul>
-                <li>Astrophysics, geophysics, and theoretical physics</li>
-                <li>Software development and engineering</li>
-                <li>Climate politics and international relations</li>
-                <li>Rock climbing</li>
-                <li>Oceanic and arboreal photography</li>
-                <li>Classical and romantic literature</li>
-                <!-- Add more interests as needed -->
-            </ul>
-        </section>
-        
-        <section id="photography">
-            <h2>Photography</h2>
-            <p>Check out some of my photography work: <a href="photography.html">photography</a></p>
-            
-        </section>
 
-    </main>
-    
     <footer>
-        <p> my head hurts and my email is dinitriodela@gmail.com; my phone number us 350-250-9189.</p>
-        <p><a href="admin.html" style="font-weight: bold;">Admin Dashboard</a></p>
+        <p>my head hurts and my email is dinitriodela@gmail.com; my phone number is 350-250-9189.</p>
+        <p><a href="admin.html"><strong>Admin Dashboard</strong></a></p>
     </footer>
-    
+
     <script src="scripts/main.js"></script>
+    <script>
+        // Fade-in effect on scroll
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
+
