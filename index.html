@@ -54,7 +54,7 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            padding: 10vh 5vw;
+            padding: 5vh 5vw; /* Reduced padding to decrease distance between sections */
             min-height: 100vh;
             opacity: 0;
             transform: translateY(50px);
@@ -90,12 +90,12 @@
 
         .btn {
             padding: 0.75rem 1.5rem;
-            background: #8a0e0e;
+            background: #300101;
             border: 2px solid #000;
             border-radius: 999px;
             text-transform: uppercase;
             font-weight: bold;
-            color: #000; /* Set button text color to black */
+            color: #000000; /* Set button text color to black */
             display: inline-block;
             transition: all 0.3s ease;
         }
@@ -134,61 +134,52 @@
                 <p>
                     This paper summarizes the processing and findings of the accretion disk simulation project. It discusses the physical principles behind accretion disks and the computational methods used to model them.   
                 </p>
-                <a href="projects/project1.html" class="btn" style="color: #000;">Explore Web Version →</a>
+                <a href="A Computational Model of Accretion Disks-Visualizing Physical Dependencies with Adjustable Parameters.pdf" class="btn" style="color: #000;">Read →</a>
             </div>
         </section>
-
-        <section id="interests">
-            <h2>Interests</h2>
-            <ul>
-                <li>Astrophysics, geophysics, and theoretical physics</li>
-                <li>Software development and engineering</li>
-                <li>Climate politics and international relations</li>
-                <li>Rock climbing</li>
-                <li>Oceanic and arboreal photography</li>
-                <li>Classical and romantic literature</li>
-            </ul>
-        </section>
-        
-        <section id="photography">
-            <h2>Photography</h2>
-            <p>Check out some of my photography work: <a href="photography.html">photography</a></p>
-        </section>
+    
     </main>
-    <header>
+
+        <footer>
+        
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="photography.html">Photography</a></li>
+                <li><a href="photography.html">A Little Bit About Me</a></li>
             </ul>
         </nav>
-    </header>
-
-    <footer>
         <p>my head hurts and my email is dinitriodela@gmail.com; my phone number is 350-250-9189.</p>
         <p><a href="admin.html"><strong>Admin Dashboard</strong></a></p>
     </footer>
 
     <script src="scripts/main.js"></script>
     <script>
-        // Fade-in effect on scroll
+        // Fade-in effect on scroll with more apparent transition
         const sections = document.querySelectorAll('.section');
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible'); // Ensure sections fade out when not in view
                 }
             });
         }, {
-            threshold: 0.1
+            threshold: 0.5 // Increased threshold to require more scrolling for fade-in and fade-out
         });
 
         sections.forEach(section => {
             observer.observe(section);
         });
+
+        // Adjust transition styles for more apparent fade
+        sections.forEach(section => {
+            section.style.transition = 'opacity 2s ease, transform 2s ease'; // Slower and smoother transition
+        });
+    </script>
     </script>
 </body>
 </html>
