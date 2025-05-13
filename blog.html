@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZacLab (Blog)</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        #blogEntries {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #blogEntries > div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 5vh 5vw; /* Match spacing with home page */
+            min-height: 100vh;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        #blogEntries > div.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #blogEntries h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        #blogEntries p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,18 +52,22 @@
             <h2>Welcome to My Blog</h2>
             <p>Here you will find my latest thoughts, updates, and articles.</p>
             <div id="blogEntries">
-                <h4>deez bums tried to take us down</h4>
-                <p>we was in the trenches but we done saved ourselves</p>
+                <div>
+                    <h4>deez bums tried to take us down</h4>
+                    <p>we was in the trenches but we done saved ourselves</p>
+                </div>
+                <div>
+                    <h4>new paper!</h4>
+                    <p>I just released a new scientific paper surrounding the accretion disk simulations. you should check it out! (also SAT's are coming out on thursday, wish me luck!)</p>
+                </div>
             </div>
         </section>
     </main>
     
-       <footer>
-        
+    <footer>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="photography.html">A Little Bit About Me</a></li>
             </ul>
@@ -36,6 +76,30 @@
         <p><a href="admin.html"><strong>Admin Dashboard</strong></a></p>
     </footer>
     <script src="scripts/main.js"></script>
+    <script>
+        const blogPosts = document.querySelectorAll('#blogEntries > div');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible'); // Ensure posts fade out when not in view
+                }
+            });
+        }, {
+            threshold: 0.5 // Increased threshold to require more scrolling for fade-in and fade-out
+        });
+
+        blogPosts.forEach(post => {
+            observer.observe(post);
+        });
+
+        // Adjust transition styles for more apparent fade
+        blogPosts.forEach(post => {
+            post.style.transition = 'opacity 2s ease, transform 2s ease'; // Slower and smoother transition
+        });
+    </script>
 </body>
 </html>
 
