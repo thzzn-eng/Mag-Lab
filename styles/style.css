@@ -169,3 +169,24 @@ a:hover {
         padding: 0.5rem;
     }
 }
+
+        .contact-box {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border: 2px solid #ffffff;
+            border-radius: 15px;
+            background-color: #000; /* Changed background to black */
+            color: #fff; /* Adjusted text color to white for better contrast */
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .contact-box a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
