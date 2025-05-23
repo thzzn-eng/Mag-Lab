@@ -122,7 +122,14 @@ function showScreen(screenIdOrIndex) {
     }
 
     // Update button states
-    if (buttons.nextSection) buttons.nextSection.disabled = currentScreenIndex === screenOrder.length - 1;
+    if (buttons.nextSection) {
+        if (currentScreenIndex === screenOrder.length - 1) {
+            buttons.nextSection.style.display = 'none'; // Hide on last screen
+        } else {
+            buttons.nextSection.style.display = 'inline'; // Show on other screens
+            buttons.nextSection.disabled = false; // Ensure it's enabled if not on the last screen
+        }
+    }
 
     if (targetScreenId === 'luminousAnim') {
         initLuminousAnimation();
