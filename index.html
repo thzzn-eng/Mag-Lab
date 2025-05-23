@@ -149,6 +149,25 @@
         .contact-box a:hover {
             text-decoration: underline;
         }
+        .read-more-link {
+            /* color: blue; */ /* Removed color */
+            font-weight: bold;
+            font-style: italic;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .hidden-text {
+            display: none;
+        }
+        .minimize-link {
+            /* color: red; */ /* Removed color */
+            font-weight: bold;
+            font-style: italic;
+            cursor: pointer;
+            text-decoration: underline;
+            display: none; /* Initially hidden */
+            margin-left: 5px; /* Add some space from the text */
+        }
     </style>
 </head>
 <body>
@@ -185,6 +204,18 @@
             </div>
         </section>
     
+                <section class="section" id="project3">
+            <img src="k3.png" alt="Dark Matter and Kepler's Third Law Placeholder Image"/>
+            <div class="section-content">
+                <h2>Dark Matter and Keplers Third Law of Planetary Motion</h2>
+                <p>
+                    The deduction of the existence of dark matter can be partially attributed to inferences made using Kepler's third law. One can deduce, from this law, that there is a positive relationship between the increase of mass and increase in velocity, exponentially and vice versa for a decrease in mass. In modern day physics, the scientific community has recognized a common pattern in the formation and structure of a stellar system to be that lighter, less massive, more gas based bodies orbit towards<span id="read-more-dm" class="read-more-link"> read more.</span><span id="more-text-dm" class="hidden-text"> the rims of systems.
+                    Therefore, using Kepler's third law, we can deduce that the velocity of objects, in general, decrease due to a decrease in mass. However, data from telescopes and other observational mediums have shown that velociities of objects around the rims of systems are very close to the speed of ones closer to the rim. When viewing graphs, users can also see that the calculation based system shows a negative exponential behavior, whereas the reality concludes a flat, slightly decreasing, line. Therefore, we can deduce the existence of furhter, non-luminous, mass, also known as dark matter.<span id="minimize-dm" class="minimize-link">minimize</span></span>
+                </p>
+                <a href="vir1.html" class="btn" style="color: #000;">Learn More →</a>
+            </div>
+        </section>
+
     </main>
 
         <footer>
@@ -244,6 +275,25 @@
         });
 
         heroObserver.observe(heroSection);
+
+        // Read more functionality
+        const readMoreDM = document.getElementById('read-more-dm');
+        const moreTextDM = document.getElementById('more-text-dm');
+        const minimizeDM = document.getElementById('minimize-dm');
+
+        if (readMoreDM && moreTextDM && minimizeDM) {
+            readMoreDM.addEventListener('click', () => {
+                moreTextDM.style.display = 'inline';
+                readMoreDM.style.display = 'none';
+                minimizeDM.style.display = 'inline'; // Show minimize button
+            });
+
+            minimizeDM.addEventListener('click', () => {
+                moreTextDM.style.display = 'none';
+                readMoreDM.style.display = 'inline';
+                minimizeDM.style.display = 'none'; // Hide minimize button
+            });
+        }
     </script>
 </body>
 </html>

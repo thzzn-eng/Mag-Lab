@@ -67,43 +67,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     if (!loginForm) {
         console.error('Login form not found');
-        return;
-    }
+        // Removed return here to allow other initializations like read-more
+    } else { // Added else to only attach listener if form exists
+        loginForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            console.log('Login form submitted'); // Debugging log
 
-    loginForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        console.log('Login form submitted'); // Debugging log
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+            console.log('Email:', email); // Debugging log
+            console.log('Password:', password); // Debugging log
 
-        console.log('Email:', email); // Debugging log
-        console.log('Password:', password); // Debugging log
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
 
-        try {
-            const response = await fetch('/api/auth/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password })
-            });
+                console.log('Response status:', response.status); // Debugging log
 
-            console.log('Response status:', response.status); // Debugging log
-
-            if (response.ok) {
-                const data = await response.json();
-                console.log('Login successful, token:', data.token); // Debugging log
-                localStorage.setItem('token', data.token);
-                window.location.href = 'admin.html';
-            } else {
-                const errorData = await response.json();
-                console.error('Login failed:', errorData); // Debugging log
-                document.getElementById('loginError').textContent = errorData.message || 'Login failed';
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Login successful, token:', data.token); // Debugging log
+                    localStorage.setItem('token', data.token);
+                    window.location.href = 'admin.html';
+                } else {
+                    const errorData = await response.json();
+                    console.error('Login failed:', errorData); // Debugging log
+                    document.getElementById('loginError').textContent = errorData.message || 'Login failed';
+                    document.getElementById('loginError').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error logging in:', error);
+                document.getElementById('loginError').textContent = 'An error occurred. Please try again later.';
                 document.getElementById('loginError').style.display = 'block';
             }
-        } catch (error) {
-            console.error('Error logging in:', error);
-            document.getElementById('loginError').textContent = 'An error occurred. Please try again later.';
-            document.getElementById('loginError').style.display = 'block';
-        }
-    });
+        });
+    }
 });

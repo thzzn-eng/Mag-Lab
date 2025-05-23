@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    font-family: 'Lato', sans-serif; /* Changed font to Lato */
+    margin: 0;
+    padding: 0;
+    background-color: #000000; 
+    color: #e0e0e0; /* Light text */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+#app-container {
+    background-color: #1e1e1e; /* Slightly lighter dark for container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 900px;
+}
+
+.screen {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #ffffff;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #333333;
+    color: white;
+    border: 1px solid #555555;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #555555;
+}
+
+button:active {
+    background-color: #222222;
+}
+
+canvas {
+    background-color: #101010;
+    border: 1px solid #444444;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Screen Specific Styles */
+#start-screen p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+/* Legend and Plot Area */
+#legend-controls fieldset {
+    border: 1px solid #444444;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #2a2a2a;
+}
+
+#legend-controls legend {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+#legend-controls label {
+    margin-right: 15px;
+    color: #c0c0c0;
+}
+
+#plot-container {
+    margin-top: 20px;
+    position: relative; /* Added for better control over child elements if needed */
+    height: 500px;    /* You can adjust this value as needed */
+    width: 100%;      /* Ensures it takes the full width of its parent */
+}
+
+/* Pop-up Styles */
+.popup {
+    position: fixed; /* Or absolute if you prefer it within the app container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dim background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.popup-content {
+    background-color: #2c2c2c;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    width: 80%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.popup-content h3 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.popup-content p {
+    color: #d0d0d0;
+}
+
+#close-popup-btn {
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* Page Navigation Styles */
+.page-navigation {
+    width: 100%; /* Make it full width to center its content */
+    padding: 20px 0; /* Add some padding above and below */
+    text-align: center; /* Center the buttons within the div */
+    margin-top: 20px; /* Add some space above the navigation */
+}
+
+.page-navigation button {
+    /* Styles for navigation buttons, can be same as other buttons or specific */
+    background-color: #333333;
+    color: white;
+    border: 1px solid #555555;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px 10px; /* Adjust margin for spacing between buttons */
+}
+
+.page-navigation button:hover {
+    background-color: #555555;
+}
+
+.page-navigation button:active {
+    background-color: #222222;
+}

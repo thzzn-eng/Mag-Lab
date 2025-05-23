@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Matter Galaxy Rotation Demo</title>
+    <link rel="stylesheet" href="vir1_resources/vir1_style.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Start Screen -->
+        <section id="start-screen" class="screen active">
+            <h1>Dark Matter Galaxy Rotation Demo</h1>
+            <p>
+                Welcome! The arms of spiral galaxies rotate around their galactic center.
+                If luminous mass were all the matter, rotation velocities would decrease with distance
+                from the center (Kepler's Third Law), similar to our Solar System.
+            </p>
+            <p>
+                However, observations show that rotation curves remain flat or even increase.
+                This discrepancy suggests the presence of non-luminous matter (dark matter),
+                particularly in the outskirts of galaxies.
+            </p>
+            <p>
+                This simulation demonstrates these concepts.
+                Click 'Begin Demonstration' to see animations and explore the rotation curves.
+            </p>
+        </section>
+
+        <!-- Luminous Animation Screen -->
+        <section id="luminous-animation-screen" class="screen" style="display: none;">
+            <h2>Animation 1: Luminous Mass Only System</h2>
+            <p>
+                Imagine a galaxy where gravity comes only from visible matter (stars, gas), like our solar system.
+                Particles further from the center feel a weaker gravitational pull from the enclosed mass and thus orbit slower.
+                Watch how the outer particles lag behind.
+            </p>
+            <canvas id="luminous-animation-canvas" width="600" height="400"></canvas>
+        </section>
+
+        <!-- Dark Matter Animation Screen -->
+        <section id="dark-matter-animation-screen" class="screen" style="display: none;">
+            <h2>Animation 2: Luminous + Dark Matter System</h2>
+            <p>
+                Now, imagine the same galaxy but with an extensive halo of dark matter.
+                This additional, invisible mass means that even particles far from the center feel a strong gravitational pull.
+                Observe how the outer particles can maintain higher speeds, leading to a 'flatter' rotation curve.
+            </p>
+            <canvas id="dark-matter-animation-canvas" width="600" height="400"></canvas>
+        </section>
+
+        <!-- Simulation Screen -->
+        <section id="simulation-screen" class="screen" style="display: none;">
+            <h2>Galaxy Rotation Curve Simulation</h2>
+            <div id="legend-controls">
+                <fieldset>
+                    <legend>Legend</legend>
+                    <label><input type="checkbox" id="toggle-keplerian" checked> Keplerian Curve</label>
+                    <label><input type="checkbox" id="toggle-luminous-dm" checked> Luminous + Dark Matter Curve</label>
+                    <label><input type="checkbox" id="toggle-dm-core" checked> DM Core Radius</label>
+                </fieldset>
+            </div>
+            <div id="plot-container">
+                <canvas id="rotation-curve-chart"></canvas>
+            </div>
+            <div id="explanation-popup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <h3 id="popup-title">Detailed Explanation</h3>
+                    <p id="popup-text">Details about the selected data point...</p>
+                    <button id="close-popup-btn">Close</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="page-navigation">
+        <button id="previous-section-btn">Return</button>
+        <button id="next-section-btn">Continue</button> 
+    </div>
+
+    <script src="vir1_resources/vir1_script.js"></script>
+    <!-- You'll likely want a charting library. Chart.js is a good option: -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@latest/dist/chartjs-plugin-annotation.min.js"></script>
+</body>
+</html>
