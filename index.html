@@ -236,6 +236,22 @@
             text-decoration: underline; /* Keep underline on hover */
             color: #ff4c4c; /* Optional: change color on hover to accent */
         }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column; /* Stack items vertically */
+            }
+            .section-reversed {
+                flex-direction: column; /* Stack items vertically */
+            }
+            .section img,
+            .section canvas {
+                margin: 0 auto 1rem auto; /* Center images/canvases and add spacing below */
+            }
+            .section-content {
+                text-align: center; /* Center text for better mobile readability */
+            }
+        }
     </style>
 </head>
 <body>
