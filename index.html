@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> <!-- ADDED Font Awesome -->
     <style>
         /* TEMPORARY: Include here or move to your CSS file */
         body {
@@ -49,12 +50,11 @@
         nav ul li {
             display: inline;
         }
-        footer {
+        /* footer {
             padding: 2rem 5vw;
             font-size: 0.9rem;
-            background: #eaeaea; /* Reverted */
-            /* position: relative; */ /* Removed */
-        }
+            background: #eaeaea; 
+        } */ /* REMOVED old footer style */
         /* Fade-in effect and section styles */
         .section {
             display: flex;
@@ -121,6 +121,7 @@
             background: #000000; /* White background */
             color: #ffffff !important; /* Ensure black text */
             transform: scale(1.1); /* Slightly larger */
+            border-color: rgb(255, 0, 0); /* Pure red border on hover */
         }
 
         .hero.visible {
@@ -128,21 +129,38 @@
             transform: translateY(0);
         }
 
+        /*
         .contact-box {
             margin-top: 2rem;
-            padding: 1.5rem;
-            border: 2px solid #ffffff;
-            border-radius: 15px;
-            background-color: #000; /* Changed background to black */
-            color: #fff; /* Adjusted text color to white for better contrast */
-            text-align: center;
+            padding: 1.5rem 0; 
+            background-color: #000;
+            color: #fff;
             font-size: 1rem;
-            max-width: 600px; /* Ensures consistent width across pages */
-            margin: 0 auto; /* Centers the contact box */
+            width: 100%; 
+            box-sizing: border-box; 
+            margin-left: 0; 
+            margin-right: 0; 
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            flex-wrap: wrap; 
+            border: none; 
+            outline: none; 
+        }
+
+        .contact-item { 
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 1rem; 
+        }
+
+        .contact-item .logo { 
+            margin-right: 8px; 
+            font-size: 1.2em; 
         }
 
         .contact-box a {
-            color: #000;
+            color: #fff; 
             text-decoration: none;
             font-weight: bold;
         }
@@ -150,6 +168,7 @@
         .contact-box a:hover {
             text-decoration: underline;
         }
+        */ /* REMOVED old .contact-box and related styles */
         .read-more-link {
             /* color: blue; */ /* Removed color */
             font-weight: bold;
@@ -171,6 +190,43 @@
         }
 
         /* #galaxy-footer CSS removed */
+
+        /* ADDED new footer styles */
+        .footer {
+          background-color: #000;
+          padding: 20px;
+          text-align: center;
+          color: #fff;
+          font-family: 'Crimson Text', serif; /* Changed font to match body */
+        }
+        .footer a {
+          color: #ff4c4c; /* red accent */
+          margin: 10px;
+          text-decoration: none;
+          font-size: 1rem; /* Changed font size to match body p */
+        }
+        .footer i { /* Styles all icons in the footer */
+          font-size: 1.5rem; /* Icon size can remain larger for visual emphasis */
+          margin: 0 10px; /* Applies to icons in <p> and in <a> */
+          transition: transform 0.2s;
+        }
+        .footer i:hover {
+          transform: scale(1.2);
+          color: #ff1e1e;
+        }
+        .footer p {
+            font-size: 1rem; /* Ensure paragraph text in footer matches body p */
+            margin: 0.5rem 0; /* Match body p margin if desired */
+        }
+        .footer p a { /* Specific style for contact links in paragraph to be white */
+            color: #fff; /* White color for contact links */
+            font-weight: normal; /* Override bold if not desired from general .footer a */
+            font-size: 1rem; /* Ensure link font size matches body p */
+        }
+        .footer p a:hover {
+            text-decoration: underline; /* Keep underline on hover */
+            color: #ff4c4c; /* Optional: change color on hover to accent */
+        }
     </style>
 </head>
 <body>
@@ -183,6 +239,7 @@
         <p>I am also an aspiring astrophysicist and engineer with a passion for development and research.</p>
         <br>
         <p>I hope to bring my love of physics and creativity to my community through outreach, research projects, and community.</p>
+        
     </section>
 
     <section class="section" id="project2">
@@ -221,22 +278,21 @@
 
     </main>
 
-        <footer>
-        
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="photography.html">A Little Bit About Me</a></li>
-            </ul>
-        </nav>
-        <div class="contact-box">
-            <p>Email: <a href="mailto:dinitriodela@gmail.com">dinitriodela@gmail.com</a></p>
-            <p>Phone: <a href="tel:3502509189">350-250-9189</a></p>
-            <p>GitHub: <a href="https://github.com/thzzn-eng" target="_blank">https://github.com/thzzn-eng</a></p>
+    <!-- ENTIRE OLD FOOTER REPLACED WITH NEW FOOTER -->
+    <div class="footer">
+        <p>
+          <i class="fab fa-github"></i> <a href="https://github.com/thzzn-eng" target="_blank">@thzzn-eng</a><br>
+          <i class="fas fa-envelope"></i> <a href="mailto:dinitriodela@gmail.com">dinitriodela@gmail.com</a><br>
+          <i class="fas fa-phone"></i> <a href="tel:3502509189">350-250-9189</a>
+        </p>
+        <div>
+          <a href="https://www.instagram.com/isaac_ur_senpai/#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/isaac-chance-6971a034a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/ibrineton?s=21" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.youtube.com/@sasha.physdev" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
         </div>
-        <!-- Galaxy Canvas in Footer Removed -->
-        </footer>
+    </div>
 
     <script src="scripts/main.js"></script>
     <script>
@@ -310,14 +366,14 @@
 
             // Initialize particles
             for (let i = 0; i < numParticlesP3; i++) {
-                // Determine if the particle should be purple
-                const isPurple = Math.random() < 0.3; // 30% chance of being purple
+                // Determine if the particle should be red
+                const isRedParticle = Math.random() < 0.3; // 30% chance of being red
                 let color;
-                if (isPurple) {
-                    // Generate a random shade of actual purple
-                    const redComponent = Math.floor(Math.random() * 60) + 70; // Values between 70 and 129
-                    const greenComponent = 0; // Keeping green at 0 for a clearer purple
-                    const blueComponent = Math.floor(Math.random() * 80) + 150; // Values between 150 and 229
+                if (isRedParticle) {
+                    // Generate a random shade of red
+                    const redComponent = Math.floor(Math.random() * 100) + 155; // Values between 155 and 255 for a strong red
+                    const greenComponent = 0; // Keep green at 0 for pure red
+                    const blueComponent = 0;  // Keep blue at 0 for pure red
                     color = `rgba(${redComponent}, ${greenComponent}, ${blueComponent}, ${Math.random() * 0.5 + 0.5})`;
                 } else {
                     // Original white color
