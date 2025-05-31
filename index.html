@@ -206,7 +206,7 @@
           font-size: 1rem; /* Changed font size to match body p */
         }
         .footer i { /* Styles all icons in the footer */
-          font-size: 1.5rem; /* Icon size can remain larger for visual emphasis */
+          font-size: 1rem; /* Icon size can remain larger for visual emphasis */
           margin: 0 10px; /* Applies to icons in <p> and in <a> */
           transition: transform 0.2s;
         }
@@ -217,6 +217,15 @@
         .footer p {
             font-size: 1rem; /* Ensure paragraph text in footer matches body p */
             margin: 0.5rem 0; /* Match body p margin if desired */
+            display: flex; /* Added */
+            justify-content: center; /* Added */
+            align-items: center; /* Added */
+            flex-wrap: wrap; /* Added */
+            gap: 1px; /* Further reduced gap between items */
+        }
+        .footer p i { /* Specific style for icons within the contact paragraph */
+            font-size: 1rem; /* Adjusted for better proportion with 1rem text */
+            margin-right: 1px; /* Reduced margin to bring logos even closer to text */
         }
         .footer p a { /* Specific style for contact links in paragraph to be white */
             color: #fff; /* White color for contact links */
@@ -281,8 +290,8 @@
     <!-- ENTIRE OLD FOOTER REPLACED WITH NEW FOOTER -->
     <div class="footer">
         <p>
-          <i class="fab fa-github"></i> <a href="https://github.com/thzzn-eng" target="_blank">@thzzn-eng</a><br>
-          <i class="fas fa-envelope"></i> <a href="mailto:dinitriodela@gmail.com">dinitriodela@gmail.com</a><br>
+          <i class="fab fa-github"></i> <a href="https://github.com/thzzn-eng" target="_blank">@thzzn-eng</a>
+          <i class="fas fa-envelope"></i> <a href="mailto:dinitriodela@gmail.com">dinitriodela@gmail.com</a>
           <i class="fas fa-phone"></i> <a href="tel:3502509189">350-250-9189</a>
         </p>
         <div>
