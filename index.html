@@ -16,6 +16,7 @@
             font-family: 'Crimson Text', serif; /* Changed font */
             background-color: #f2f2f2;
             color: #111;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         .hero {
             padding: 10vh 10vw; /* Adjusted padding to move the hero title further in */
@@ -92,6 +93,7 @@
 
         .section-content {
             max-width: 600px;
+            margin: 0 auto; /* Center the content horizontally */
         }
 
         .section-content h2 {
@@ -220,7 +222,7 @@
             display: flex; /* Added */
             justify-content: center; /* Added */
             align-items: center; /* Added */
-            flex-wrap: wrap; /* Added */
+            flex-wrap: nowrap; /* Prevent wrapping of items */
             gap: 1px; /* Further reduced gap between items */
         }
         .footer p i { /* Specific style for icons within the contact paragraph */
@@ -250,6 +252,13 @@
             }
             .section-content {
                 text-align: center; /* Center text for better mobile readability */
+            }
+            #project2 img {
+                max-width: 300px; /* Reduce size of the scientific paper image */
+                margin: 0 auto; /* Center the image */
+            }
+            #project2 .section-content {
+                text-align: center; /* Center the text and title */
             }
         }
     </style>
